@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0B0E14; --card-bg: #000000; --accent: #A855F7;
+            --text-main: #FFFFFF; --text-dim: #94A3B8; --border: #1E293B;
+        }
+        body { margin: 0; padding: 20px; font-family: 'Inter', sans-serif; background: var(--bg-color); color: var(--text-main); }
+        .container { display: flex; flex-direction: column; gap: 16px; }
+        .input-wrapper { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 12px; }
+        textarea { width: 100%; height: 100px; border: none; outline: none; background: transparent; color: var(--text-main); font-size: 14px; resize: none; }
+        .btn { width: 100%; padding: 14px; border-radius: 40px; font-size: 15px; font-weight: 600; cursor: pointer; border: none; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.2s; }
+        #processBtn { background: var(--accent); color: white; box-shadow: 0 0 15px rgba(168, 85, 247, 0.3); }
+        #summarizeBtn { background: transparent; color: var(--text-main); border: 1px solid var(--border); }
+        .response-card { background: #171C26; border-radius: 16px; padding: 16px; border: 1px solid var(--border); min-height: 120px; max-height: 400px; overflow-y: auto; }
+        .response-text { font-size: 14px; color: #E2E8F0; line-height: 1.6; white-space: pre-wrap; }
+        .footer { display: flex; justify-content: space-between; margin-top: 12px; font-size: 12px; color: var(--text-dim); }
+        .guide { text-align: center; font-size: 10px; color: #475569; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-wrapper"><textarea id="inputBox" placeholder="Highlight text or scan page..."></textarea></div>
+        <button id="processBtn" class="btn">Generate Response <i class="fa-solid fa-bolt"></i></button>
+        <button id="summarizeBtn" class="btn">Summarize Full Page <i class="fa-solid fa-file-lines"></i></button>
+        <div class="response-card">
+            <div id="outputBox" class="response-text">AI Response will appear here...</div>
+            <div class="footer">
+                <span id="copyBtn" style="cursor:pointer"><i class="fa-regular fa-copy"></i> Copy</span>
+                <span><i class="fa-regular fa-thumbs-up"></i> <i class="fa-regular fa-thumbs-down"></i></span>
+            </div>
+        </div>
+        <div class="guide">TIP: REFRESH PAGE TO ACTIVATE SCANNER</div>
+    </div>
+    <script src="sidepanel.js"></script>
+</body>
+</html>
